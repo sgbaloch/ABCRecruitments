@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AbcRecruitment</string>
+    <string name="log_in"> <u>Log in</u> </string>
 </resources>
