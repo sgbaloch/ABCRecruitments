@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.agbaloch.abcrecruitment.Models.Admin;
@@ -22,56 +25,54 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button btnRegister, btnLogIn;
+    private TextView txtAdmin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        wireUIComponents();
 
-        db.collection("Admin")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+        //FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                        if(task.isSuccessful()){
 
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("TAG", document.getId() + " => " + document.getData());
-                                
-                            }
-                        }
-                    }
-                });
+    }
 
-//        Admin admin = new Admin();
-//        admin.setfName("sheraz");
-//        admin.setlName("ghaffar");
-//        admin.setUsername("shgbaloch");
-//        admin.setPassword("abc12345");
+    private void wireUIComponents(){
 
-//        Map<String, Object> adminMap = new HashMap<>();
-//        adminMap.put("fName", admin.getfName());
-//        adminMap.put("lName", admin.getlName());
-//        adminMap.put("email", admin.getUsername());
-//        adminMap.put("password", admin.getPassword());
-//
-//        db.collection("Admin")
-//                .add(adminMap)
-//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                    @Override
-//                    public void onSuccess(DocumentReference documentReference) {
-//                        Log.d("added document", "DocumentSnapshot added with ID: " + documentReference.getId());
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//
-//                        Toast.makeText(MainActivity.this, "Failed to add", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
+        btnLogIn = findViewById(R.id.btn_login);
+        btnRegister = findViewById(R.id.btn_register);
+
+        txtAdmin = findViewById(R.id.txt_adminLogin);
+    }
+
+    private void logInAsAdmin(){
+
+
+    }
+
+    private void createAccount(){
+
+    }
+
+    private void logIn(){
+
+
+    }
+
+    public void logInAsAdmin(View view) {
+
+        Toast.makeText(this, "Admin", Toast.LENGTH_LONG).show();
+    }
+
+    public void logIn(View view) {
+
+    }
+
+    public void createAccount(View view) {
+
 
     }
 }

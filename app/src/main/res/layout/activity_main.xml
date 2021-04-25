@@ -77,7 +77,8 @@
         app:layout_constraintStart_toStartOf="@id/guide_left"
         app:layout_constraintEnd_toStartOf="@id/guide_right"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="160dp"/>
+        android:layout_marginBottom="160dp"
+        android:onClick="createAccount"/>
 
     <Button
         android:id="@+id/btn_login"
@@ -90,6 +91,7 @@
         app:layout_constraintStart_toStartOf="@id/guide_left"
         app:layout_constraintEnd_toStartOf="@id/guide_right"
         app:layout_constraintTop_toBottomOf="@id/btn_register"
+        android:onClick="logIn"
         />
 
     <LinearLayout
@@ -108,9 +110,11 @@
             />
 
         <TextView
+            android:id="@+id/txt_adminLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/log_in"/>
+            android:text="@string/log_in"
+            android:onClick="logInAsAdmin"/>
 
         <TextView
             android:layout_width="wrap_content"
