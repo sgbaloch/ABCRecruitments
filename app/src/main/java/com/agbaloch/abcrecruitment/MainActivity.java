@@ -3,6 +3,7 @@ package com.agbaloch.abcrecruitment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void createAccount(){
 
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     private void logIn(){
@@ -73,6 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void createAccount(View view) {
 
-
+        createAccount();
     }
 }
