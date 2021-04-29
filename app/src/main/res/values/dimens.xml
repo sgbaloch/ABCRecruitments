@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="register_editText_mTop">25dp</dimen>
+    <dimen name="detailActivity_heading_textSize">16sp</dimen>
+    <dimen name="detailActivity_section_mTop">18dp</dimen>
 </resources>

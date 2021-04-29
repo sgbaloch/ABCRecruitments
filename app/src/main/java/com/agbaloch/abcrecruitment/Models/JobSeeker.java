@@ -1,10 +1,14 @@
 package com.agbaloch.abcrecruitment.Models;
 
+import java.util.List;
+
 public class JobSeeker {
 
-    private int id, dob, contact;
+    private int id;
     private String fName, lName, email, password, address, city, postcode, gender
-            , jobPreference;
+            , jobPreference,  dob, contact;
+
+    private List<Education> listEdu;
 
     public int getId() {
         return id;
@@ -12,22 +16,6 @@ public class JobSeeker {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getDob() {
-        return dob;
-    }
-
-    public void setDob(int dob) {
-        this.dob = dob;
-    }
-
-    public int getContact() {
-        return contact;
-    }
-
-    public void setContact(int contact) {
-        this.contact = contact;
     }
 
     public String getfName() {
@@ -100,5 +88,29 @@ public class JobSeeker {
 
     public void setJobPreference(String jobPreference) {
         this.jobPreference = jobPreference;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public List<Education> getListEdu() {
+        return listEdu;
+    }
+
+    public void setListEdu(List<Education> listEdu) {
+        this.listEdu = listEdu;
     }
 }

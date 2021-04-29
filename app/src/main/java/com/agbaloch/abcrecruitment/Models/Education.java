@@ -2,38 +2,37 @@ package com.agbaloch.abcrecruitment.Models;
 
 public class Education {
 
-    private int id, startDate, endDate, jobSeekerId;
-    private String title, institution, level, grade;
+    private String id, startDate, endDate, jobSeekerId, title, institution, level, grade;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(int startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public int getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(int endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
-    public int getJobSeekerId() {
+    public String getJobSeekerId() {
         return jobSeekerId;
     }
 
-    public void setJobSeekerId(int jobSeekerId) {
+    public void setJobSeekerId(String jobSeekerId) {
         this.jobSeekerId = jobSeekerId;
     }
 

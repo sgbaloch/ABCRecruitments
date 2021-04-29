@@ -3,6 +3,7 @@ package com.agbaloch.abcrecruitment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.agbaloch.abcrecruitment.Database.Schema.JobSeekerTable;
+import com.agbaloch.abcrecruitment.Models.Education;
 import com.agbaloch.abcrecruitment.Models.JobSeeker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,6 +27,7 @@ import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -49,6 +52,8 @@ public class RegisterActivity extends AppCompatActivity {
     private JobSeeker jobSeeker;
     private FirebaseFirestore db;
     private boolean isRegistered;
+
+    private String docId;
 
 
     @Override
@@ -92,13 +97,31 @@ public class RegisterActivity extends AppCompatActivity {
         jobSeeker.setEmail(edtEmail.getText().toString());
         jobSeeker.setPassword(edtPassword.getText().toString());
 
+//        List<Education> educations = new ArrayList<>();
+//        Education education = new Education();
+//        education.setInstitution("Newports");
+//        education.setTitle("bba");
+//
+//        Education education1 = new Education();
+//        education1.setInstitution("NCR");
+//        education1.setTitle("bba");
+//
+//        educations.add(education);
+//        educations.add(education1);
+//
+//        jobSeeker.setListEdu(educations);
+
         db.collection(JobSeekerTable.TABLE_NAME)
                 .add(jobSeeker)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
 
+                        docId = documentReference.getId();
                         Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegisterActivity.this, DetailsActivity.class);
+                        intent.putExtra("DOC_ID", docId);
+                        startActivity(intent);
 
                     }
                 })
