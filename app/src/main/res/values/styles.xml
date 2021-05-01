@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="textHeading">
+
+        <item name="android:textColor">#0277bd</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
 </resources>

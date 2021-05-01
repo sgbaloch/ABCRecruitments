@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="levels_array">
+        <item>Level of education</item>
+        <item>O levels</item>
+        <item>A levels</item>
+        <item>Under-graduation</item>
+        <item>Post-graduation</item>
+        <item>Doctorate level</item>
+    </string-array>
+</resources>

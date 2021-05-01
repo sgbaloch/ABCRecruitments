@@ -1,9 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QualificationActivity">
+    tools:context=".QualificationActivity"
+    android:background="#ffff">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/txt_titleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Tell us more about your Work experience, Education and Skills"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/detailActivity_heading_textSize"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Work Experience (If any)"
+            android:textAppearance="@style/textHeading"
+            android:textSize="@dimen/detailActivity_heading_textSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_titleLine"
+            android:layout_marginTop="@dimen/detailActivity_section_mTop"/>
+
+        <LinearLayout
+            android:id="@+id/linearL_experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_experience">
+
+            <EditText
+                android:id="@+id/edt_jobTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Job title"/>
+
+            <EditText
+                android:id="@+id/edt_organisation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Organisation"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edt_expStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:longClickable="false"
+                    android:layout_weight="1"
+                    android:hint="Start date"/>
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edt_expEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="End date"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:longClickable="false"/>
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_edittext"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:hint="Responsibilities"
+                android:maxLines="10"
+                android:padding="8dp"
+                android:layout_marginTop="6dp"/>
+
+            <Button
+                android:id="@+id/btn_addExp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:text="Add"
+                android:textColor="#24a0ed"
+                android:background="@drawable/shape_button2"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_education"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Education"
+            android:textAppearance="@style/textHeading"
+            android:textSize="@dimen/detailActivity_heading_textSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearL_experience"
+            android:layout_marginTop="@dimen/detailActivity_section_mTop"/>
+
+        <LinearLayout
+            android:id="@+id/linearL_education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_education">
+
+            <EditText
+                android:id="@+id/edt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"/>
+
+            <EditText
+                android:id="@+id/edt_institution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Institution"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edt_eduStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Start date"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:longClickable="false"/>
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edt_eduEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="End date"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:longClickable="false"/>
+
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spin_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listheader="Please select"/>
+
+            <EditText
+                android:id="@+id/edt_grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Grade/CGPA"/>
+
+            <Button
+                android:id="@+id/btn_addEdu"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:text="Add"
+                android:textColor="#24a0ed"
+                android:background="@drawable/shape_button2"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_skills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skills"
+            android:textAppearance="@style/textHeading"
+            android:textSize="@dimen/detailActivity_heading_textSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearL_education"
+            android:layout_marginTop="@dimen/detailActivity_section_mTop"/>
+
+        <LinearLayout
+            android:id="@+id/linearL_skills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_skills">
+
+            <EditText
+                android:id="@+id/edt_skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add skills"/>
+
+            <Button
+                android:id="@+id/btn_addSkill"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:text="Add"
+                android:textColor="#24a0ed"
+                android:background="@drawable/shape_button2"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_finish"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:background="@drawable/shap_button"
+            android:textColor="#ffff"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearL_skills"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

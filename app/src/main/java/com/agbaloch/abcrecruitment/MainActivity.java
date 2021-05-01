@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createAccount(){
 
-        Intent intent = new Intent(this, RegisterActivity.class);
+        Intent intent = new Intent(this, QualificationActivity.class);
         startActivity(intent);
     }
 
