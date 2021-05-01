@@ -4,19 +4,14 @@ import java.util.List;
 
 public class JobSeeker {
 
-    private int id;
-    private String fName, lName, email, password, address, city, postcode, gender
+    private String fName, lName, email, password, address, city, gender
             , jobPreference,  dob, contact;
 
     private List<Education> listEdu;
 
-    public int getId() {
-        return id;
-    }
+    private List<Experience> listExp;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    private List<Skill> listSkill;
 
     public String getfName() {
         return fName;
@@ -66,14 +61,6 @@ public class JobSeeker {
         this.city = city;
     }
 
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -112,5 +99,21 @@ public class JobSeeker {
 
     public void setListEdu(List<Education> listEdu) {
         this.listEdu = listEdu;
+    }
+
+    public List<Experience> getListExp() {
+        return listExp;
+    }
+
+    public void setListExp(List<Experience> listExp) {
+        this.listExp = listExp;
+    }
+
+    public List<Skill> getListSkill() {
+        return listSkill;
+    }
+
+    public void setListSkill(List<Skill> listSkill) {
+        this.listSkill = listSkill;
     }
 }

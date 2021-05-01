@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -180,7 +181,10 @@ public class DetailsActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
 
-                                Toast.makeText(DetailsActivity.this, "updated successfully!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(DetailsActivity.this, QualificationActivity.class);
+                                intent.putExtra("DOC_ID", docId);
+                                startActivity(intent);
+                                //Toast.makeText(DetailsActivity.this, "updated successfully!", Toast.LENGTH_SHORT).show();
                             }
                         });
             }
