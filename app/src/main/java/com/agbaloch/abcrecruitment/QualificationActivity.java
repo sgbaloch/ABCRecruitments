@@ -3,6 +3,7 @@ package com.agbaloch.abcrecruitment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.icu.util.MeasureUnit;
 import android.os.Bundle;
@@ -352,7 +353,10 @@ public class QualificationActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
 
-                                                    Toast.makeText(QualificationActivity.this, "Updated successfully", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(QualificationActivity.this, JobSeekerActivity.class);
+                                                    intent.putExtra("DOC_ID", docId);
+                                                    startActivity(intent);
+                                                    //Toast.makeText(QualificationActivity.this, "Updated successfully", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
