@@ -355,6 +355,7 @@ public class QualificationActivity extends AppCompatActivity {
 
                                                     Intent intent = new Intent(QualificationActivity.this, JobSeekerActivity.class);
                                                     intent.putExtra("DOC_ID", docId);
+                                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     startActivity(intent);
                                                     //Toast.makeText(QualificationActivity.this, "Updated successfully", Toast.LENGTH_SHORT).show();
                                                 }

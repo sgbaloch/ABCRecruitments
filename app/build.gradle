@@ -30,4 +30,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
     implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
 }

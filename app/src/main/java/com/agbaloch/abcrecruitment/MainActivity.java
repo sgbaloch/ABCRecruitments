@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void logInAsAdmin(){
 
-
+        Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+        startActivity(intent);
     }
 
     private void createAccount(){
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logInAsAdmin(View view) {
 
-        Toast.makeText(this, "Admin", Toast.LENGTH_LONG).show();
+        logInAsAdmin();
     }
 
     public void logIn(View view) {
