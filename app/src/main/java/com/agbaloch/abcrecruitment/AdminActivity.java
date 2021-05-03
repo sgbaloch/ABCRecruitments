@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.agbaloch.abcrecruitment.Adapters.ApplicantAdapter;
 import com.agbaloch.abcrecruitment.Database.Schema.JobSeekerTable;
@@ -26,6 +29,8 @@ public class AdminActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private List<JobSeeker> jobSeekerList;
 
+    private TextView txtSearch;
+
     private FirebaseFirestore db;
 
     @Override
@@ -34,6 +39,7 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
 
         recyclerView = findViewById(R.id.recycle_applicants);
+        txtSearch = findViewById(R.id.txt_search);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         jobSeekerList = new ArrayList<>();
@@ -62,5 +68,13 @@ public class AdminActivity extends AppCompatActivity {
                     }
                 });
 
+        txtSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(AdminActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

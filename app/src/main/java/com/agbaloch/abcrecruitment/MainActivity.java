@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void logIn(){
 
-
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 
     public void logInAsAdmin(View view) {
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logIn(View view) {
 
+        logIn();
     }
 
     public void createAccount(View view) {

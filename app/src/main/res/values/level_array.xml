@@ -8,4 +8,12 @@
         <item>Post-graduation</item>
         <item>Doctorate level</item>
     </string-array>
+
+    <string-array name="criteria_array">
+        <item>Preferred job</item>
+        <item>Specific education</item>
+        <item>Specific experience</item>
+        <item>Education level</item>
+        <item>Specific skill</item>
+    </string-array>
 </resources>

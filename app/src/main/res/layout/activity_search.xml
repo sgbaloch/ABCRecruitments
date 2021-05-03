@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".SearchActivity"
+    android:animateLayoutChanges="true">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_topBar"
@@ -27,23 +28,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="17sp"
+            android:text="Search for applicants"
             android:textColor="#ffff" />
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/guide_left"
-        app:layout_constraintEnd_toEndOf="@id/guide_right"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.14"
-        android:text="Enter Login details"
-        android:textSize="22sp"
-        android:textColor="#000"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -60,39 +48,76 @@
         app:layout_constraintGuide_percent="0.89"/>
 
     <LinearLayout
+        android:id="@+id/ll_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/guide_left"
         app:layout_constraintEnd_toEndOf="@id/guide_right"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center_horizontal"
+        app:layout_constraintVertical_bias="0.15"
+        android:orientation="vertical">
+
 
         <EditText
-            android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="Email"/>
+            android:id="@+id/edt_search"
+            android:layout_marginTop="10dp"
+            android:hint="Type here"/>
 
-        <EditText
-            android:id="@+id/edt_password"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:layout_marginTop="20dp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search by"
+                android:layout_marginEnd="4dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_criteria"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btn_login"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="#ffff"
-            android:background="@drawable/shap_button"
-            android:layout_marginTop="50dp"/>
+            android:id="@+id/btn_search"
+            android:text="Search"
+            android:background="@drawable/shape_button2"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No result"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"/>
+
 
     </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_search"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

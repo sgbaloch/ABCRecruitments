@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminActivity">
+    tools:context=".AdminActivity"
+    android:animateLayoutChanges="true">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_topBar"
@@ -36,10 +37,12 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/txt_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:clickable="true"/>
 
 
     </LinearLayout>
